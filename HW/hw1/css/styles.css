@@ -1,0 +1,32 @@
+        .images{
+            height: 300px;
+        }
+        
+        .screenshot {
+            float:left;
+            padding:10px;
+            padding-left:0px;
+        }
+        
+        .client{
+            float: left;
+            padding:10px;
+        }
+        
+        #description{
+            width:600px;
+            
+        }
+        
+        body {
+    background-color: #0099ff;
+    }
+
+        p {
+         font-family: Arial, Helvetica; 
+            }
+            
+        h1 {
+             font-family: Arial, Helvetica; 
+              text-decoration: underline;
+        }    
