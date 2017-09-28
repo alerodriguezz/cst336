@@ -1,2 +1,2 @@
-# Personal-Portfolio
-A simple website about me. 
+# CST 336 Repository
+A simple website about my a.ssignments and labs for this course
