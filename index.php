@@ -55,11 +55,11 @@
             </tr>
               <tr>
                 <td>HW 1</td>
-                <td> <a target="_blank" href="https://cst336-alerodriguez.herokuapp.com/HW/hw1/index.html">https://cst336-alerodriguez.herokuapp.com/HW/hw1/index.html</a></td>
+                <td> <a target="_blank" href="/HW/hw1/index.html">/HW/hw1/index.html</a></td>
             </tr>
                 <tr>
                     <td>HW 2</td>
-                    <td><a target= "_blank" href="https://cst336-alerodriguez.herokuapp.com/HW/hw2/index.html"</td>
+                    <td><a target= "_blank" href="HW/hw2/index.html"</td>
                 </tr>
         </table>
         
