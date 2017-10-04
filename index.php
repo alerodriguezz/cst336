@@ -59,7 +59,7 @@
             </tr>
                 <tr>
                     <td>HW 2</td>
-                    <td><a target= "_blank" href="HW/hw2/index.html"</td>
+                    <td><a target= "_blank" href="HW/hw2/index.html">HW/hw2/index.html</a></td>
                 </tr>
         </table>
         
