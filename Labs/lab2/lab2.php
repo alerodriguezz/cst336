@@ -1,2 +1,2 @@
 
- echo '<img src="images/cat" border=0>'; 
+ echo '<img src="images/cat.jpg">'; 
