@@ -41,7 +41,7 @@
             </tr>
             <tr>
                 <td>Lab 1</td>
-                <td> <a target="_blank" href="https://cst336-alerodriguez.herokuapp.com/PersonalPortfolio/index.html">https://cst336-alerodriguez.herokuapp.com/PersonalPortfolio/index.html</a></a></td>
+                <td> <a target="_blank" href="https://cst336-alerodriguez.herokuapp.com/Labs/lab2/index.php">https://cst336-alerodriguez.herokuapp.com/PersonalPortfolio/index.html</a></a></td>
             </tr>
             <tr>
                 <td>Lab 2</td>
@@ -59,7 +59,7 @@
             </tr>
                 <tr>
                     <td>HW 2</td>
-                    <td><a target= "_blank" href="HW/hw2/index.html">HW/hw2/index.html</a></td>
+                    <td><a target="_blank" href="/HW/hw2/index.html">/HW/hw2/index.html</a></td>
                 </tr>
         </table>
         
