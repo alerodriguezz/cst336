@@ -55,11 +55,16 @@
             </tr>
               <tr>
                 <td>HW 1</td>
-                <td> <a target="_blank" href="/HW/hw1/index.html">/HW/hw1/index.html</a></td>
+                <td> <a target="_blank" href="/HW/hw1/index.html">HW 1</a></td>
             </tr>
                 <tr>
                     <td>HW 2</td>
-                    <td><a target="_blank" href="/HW/hw2/index.html">/HW/hw2/index.html</a></td>
+                    <td><a target="_blank" href="/HW/hw2/index.html">HW 2</a></td>
+                </tr>
+                
+                <tr>
+                    <td>HW 3</td>
+                    <td><a target="_blank" href="/HW/hw3/index.html">HW 3</a></td>
                 </tr>
         </table>
         
