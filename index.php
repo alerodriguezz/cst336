@@ -41,10 +41,12 @@
             </tr>
             <tr>
                 <td>Lab 1</td>
-                <td> <a target="_blank" href="https://cst336-alerodriguez.herokuapp.com/Labs/lab2/index.php">https://cst336-alerodriguez.herokuapp.com/PersonalPortfolio/index.html</a></a></td>
+                <td> <a target="_blank" href="https://cst336-alerodriguez.herokuapp.com/Labs/lab1/index.php">https://cst336-alerodriguez.herokuapp.com/PersonalPortfolio/index.html</a></a></td>
             </tr>
             <tr>
                 <td>Lab 2</td>
+                    <td> <a target="_blank" href="https://cst336-alerodriguez.herokuapp.com/Labs/lab2/lab2.php">https://cst336-alerodriguez.herokuapp.com/Labs/lab2/lab2.php</a></a></td>
+            
             </tr>
         </table>
         <br>
@@ -55,16 +57,16 @@
             </tr>
               <tr>
                 <td>HW 1</td>
-                <td> <a target="_blank" href="/HW/hw1/index.html">HW 1</a></td>
+                <td> <a target="_blank" href="/HW/hw1/index.html">/HW/hw1/index.html</a></td>
             </tr>
                 <tr>
                     <td>HW 2</td>
-                    <td><a target="_blank" href="/HW/hw2/index.html">HW 2</a></td>
+                    <td><a target="_blank" href="/HW/hw2/index.html">/HW/hw2/index.html</a></td>
                 </tr>
                 
                 <tr>
                     <td>HW 3</td>
-                    <td><a target="_blank" href="/HW/hw3/index.html">HW 3</a></td>
+                    <td><a target="_blank" href="/HW/hw3/index.html">/HW/hw3/index.html</a></td>
                 </tr>
         </table>
         
