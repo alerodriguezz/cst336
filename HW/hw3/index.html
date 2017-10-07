@@ -10,10 +10,15 @@
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
+    
+   
+    <h1 class="center">Contact Form</h1>
     <body>
+        
           
-          <div>
-        <form action="result.php" method="post">
+          <div class="center">
+        <form align="center" action="result.php" method="post">
+                    
                     Name: <input type="text" name="name" required minlength="1"><br>
                     E-mail: <input type="text" name="email " required minlength="1"><br>
                     
@@ -38,16 +43,14 @@
                     <br/>
                     
                      Other?<br/>
-                     <textarea name="message" rows="3" cols="30" required></textarea> 
+                     <textarea name="message" rows="3" cols="30"></textarea> 
                     
                     <br/>
 
             <input type="submit">
-        </form> 
-        </div>
-        
+            
              <a href="index.html"> <button id="next" align="center" >Reset</button></a>
-        
+        </form> 
         </div>
     </body>
 </html>
