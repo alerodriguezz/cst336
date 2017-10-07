@@ -1,5 +1,5 @@
 
-Welcome <?php echo $_POST['name']; ?><br>
-Your email address is: <?php echo $_POST["email"];
+Welcome: <?php echo $_POST['name']; ?><br>
+Your email address is: <?php echo $_POST["email"]; ?> <br> 
 
- <button type="button" onclick="index.html">Click Me!</button> 
+"Your information has been processed...";
