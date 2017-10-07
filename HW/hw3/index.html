@@ -1,17 +1,41 @@
 <!DOCTYPE html>
+
+
 <html>
+  
     <head>
-        <title> </title>
+        <title> hw 3</title>
     </head>
     <body>
-        
-   
-        
+       
         <form action="result.php" method="post">
-        Name: <input type="text" name="name"><br>
-        E-mail: <input type="text" name="email"><br>
-        <input type="submit">
-        </form>
+                    Name: <input type="text" name="name"><br>
+                    E-mail: <input type="text" name="email"><br>
+                    
+                    Gender:<br />
+                        Male:<input type="radio" value="Male" name="gender">:<br />
+                        Female:<input type="radio" value="Female" name="gender">:<br />
+            
+                     What is your favorite car?<br/>
+                     <select name="cars">
+                          <option value="chevrolet">Volvo</option>
+                          <option value="subaru">Saab</option>
+                          <option value="fiat">Fiat</option>
+                          <option value="audi">Audi</option>
+                    </select> 
+                    <br/>
+                    
+                     Other?<br/>
+                     <textarea name="message" rows="3" cols="30"> 
+                     </textarea> 
+                    
+                    <br/>
+
+            <input type="submit">
+        </form> 
+        
         
     </body>
+    
+    
 </html>
