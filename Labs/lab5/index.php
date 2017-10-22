@@ -1,7 +1,24 @@
+
+
 <?php
-//Step1
- $db = mysqli_connect('localhost','username','password','database_name')
- or die('Error connecting to MySQL server.');
+//env variables
+$HOST=getenv('HOST');
+$DBNAME= getenv('DBNAME');
+
+//Step1 Connect to database 
+$dbConn = new PDO("mysql:host=$HOST;dbname=$DBNAME", $USERNAME, $PASSWORD);
+         
+// Setting Errorhandling to Exception
+$dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+
+
+//write sql query and assign to variable 
+$sql = "SELECT * from tech_checkout";
+$stmt = $dbConn -> prepare ($sql);
+$stmt -> execute ( array ( ':id' => '1')  );
+
+$dbConn= null;
+  
 ?>
 
 <html>
