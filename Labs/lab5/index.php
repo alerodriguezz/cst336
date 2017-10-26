@@ -1,44 +1,57 @@
 
 
 <?php
-//env variables
+
+/*env variables
 $HOST=getenv('HOST');
 $DBNAME= getenv('DBNAME');
+$USERNAME= getenv('USERNAME');
+$PASSWORD= getenv('PASSWORD');
 
+*/
 //Step1 Connect to database 
-$dbConn = new PDO("mysql:host=$HOST;dbname=$DBNAME", $USERNAME, $PASSWORD);
+$dbConn = new PDO("mysql:host=localhost;dbname=tech_checkout", alerodriguezz, "");
          
 // Setting Errorhandling to Exception
 $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 
 
 //write sql query and assign to variable 
-$sql = "SELECT * from tech_checkout";
-$stmt = $dbConn -> prepare ($sql);
-$stmt -> execute ( array ( ':id' => '1')  );
+$sql = "SELECT * FROM device";
+$result = $dbConn->query($sql);
 
-$dbConn= null;
-  
 ?>
 
-<html>
-    <head>
-        <title>Lab 5 </title>
-    </head>
-    <body>
-        <div align="center">
-            <h1 >
-                lab5_list
-            </h1>
-        </div>
-        
-        
-        <table>
-            
-            
-            
-            
-        </table>
+<head>
+    <title>
+        lab5
+    </title>
+</head>
 
-    </body>
-</html>
+<body>
+            <div align="center">
+                <table border="1" cellspacing="0" cellpadding="2" >
+                <thead>
+                	<tr>
+                		<th> Device ID </th>
+                		<th> Device Name </th>
+                		<th> Device Type </th>
+                	</tr>
+                </thead>
+                <tbody>
+               
+               <?php
+                for($i=0; $row = $result->fetch(); $i++){
+                ?>
+                	<tr class="device">
+                		<td><?php echo $row['deviceId']; ?></td>
+                		<td><?php echo $row['deviceName']; ?></td>
+                		<td><?php echo $row['deviceType']; ?></td>
+                	</tr>
+                	<?php
+                		}
+                	?>
+                </tbody>
+                </table>
+            </div>
+</body>
