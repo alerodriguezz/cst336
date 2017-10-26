@@ -28,7 +28,13 @@ $result = $dbConn->query($sql);
     </title>
 </head>
 
+<h1 align="center">
+    lab5
+</h1>
+
 <body>
+    
+            
             <div align="center">
                 <table border="1" cellspacing="0" cellpadding="2" >
                 <thead>
