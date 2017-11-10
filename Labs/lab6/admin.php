@@ -60,7 +60,7 @@ $result = $dbConn->query($display_sql);
                 ?>
                 	<tr class="device">
                 		<td><?php echo $row['id']; ?></td>
-                		<td><?php echo $row['firstname']; ?></td>
+                	<td><a href="javascript:void(0);" onClick=window.open("info.php","Ratting","width=550,height=170,0,status=0,");><?php echo $row['firstname']; ?></a></td>
                 		<td><?php echo $row['lastname']; ?></td>
                 		<td><?php echo $row['email']; ?></td>
                 	</tr>
@@ -102,7 +102,7 @@ if (isset($_POST['addBtn'])) {
                     header('location:admin.php');
 }
 
-//if add button is pressed 
+//if delete button is pressed 
 if (isset($_POST['deleteBtn'])) {
               
              //prepare query
