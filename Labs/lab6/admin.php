@@ -1,4 +1,6 @@
 <?php
+session_start();
+
  //connect to database 
 $servername = "localhost";
 $username = getenv('USERNAME');
@@ -38,9 +40,9 @@ $result = $dbConn->query($display_sql);
                 </fieldset>
             </form>
     </div>
-    <div id ="updateBtn" align="center">
-                <button>Update</button>
-                
+    <div id ="updatePrompt" align="center">
+               
+                Click on firstname to view more information or update userinfo.
      </div>
             
      <div id="table" align="center">
@@ -93,12 +95,12 @@ if (isset($_POST['addBtn'])) {
                       if($addExec)
                         {
                             $message = "add success";
-                        ?> "<script type='text/javascript'>alert('$message');</script>"<?php
+                        ?> <script type='text/javascript'>alert('$message');</script>"<?php
                         }else{
                             $message = "error adding";
                         ?><script type='text/javascript'>alert('$message');</script>"<?php
                         }
-                    $add_stmt-null;
+                    $add_stmt=null;
                     header('location:admin.php');
 }
 
