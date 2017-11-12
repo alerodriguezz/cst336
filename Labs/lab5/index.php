@@ -2,15 +2,14 @@
 
 <?php
 
-/*env variables
+//env variables
 $HOST=getenv('HOST');
 $DBNAME= getenv('DBNAME');
 $USERNAME= getenv('USERNAME');
 $PASSWORD= getenv('PASSWORD');
 
-*/
 //Step1 Connect to database 
-$dbConn = new PDO("mysql:host=localhost;dbname=tech_checkout", alerodriguezz, "");
+$dbConn = new PDO("mysql:host=localhost;dbname=tech_checkout", $USERNAME, $PASSWORD);
          
 // Setting Errorhandling to Exception
 $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 

@@ -61,8 +61,10 @@ $result = $dbConn->query($display_sql);
                 for($i=0; $row = $result->fetch(); $i++){
                 ?>
                 	<tr class="device">
-                		<td><?php echo $row['id']; ?></td>
-                	<td><a href="javascript:void(0);" onClick=window.open("info.php","Ratting","width=550,height=170,0,status=0,");><?php echo $row['firstname']; ?></a></td>
+                		<td>
+                		    <?php echo $row['id']; ?></td>
+                	<td><a href="javascript:void(0);" onClick=window.open("info.php?first=<?php echo $row['firstname'] ?>&last=<?php echo $row['lastname'] ?>&email=<?php echo $row['email'] ?>","Rating","width=550,height=170,0,status=0,");>
+                	        <?php echo $row['firstname']; ?></a></td>
                 		<td><?php echo $row['lastname']; ?></td>
                 		<td><?php echo $row['email']; ?></td>
                 	</tr>

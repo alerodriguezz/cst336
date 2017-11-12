@@ -1,5 +1,5 @@
 <?php
-session_start();
+
  //credentials
 $servername = "localhost";
 $username = getenv('USERNAME');
@@ -16,6 +16,8 @@ $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $display_sql = "SELECT * FROM admin";
 $result = $dbConn->query($display_sql);
 
+
+
 ?>
 
 <html>
@@ -29,9 +31,9 @@ $result = $dbConn->query($display_sql);
     
     <div id="user_info">
         <p>
-            Firstname: <br/>
-            Lastname:<br/>
-            Email<br/>
+            Firstname: <?php echo $_GET["first"]; ?> <br/>
+            Lastname:  <?php echo $_GET["last"]; ?><br/>
+            Email: <?php echo  $_GET["email"]; ?> <br/>
         </p>
     </div>
     <div >
