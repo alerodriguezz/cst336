@@ -2,9 +2,8 @@
 
 <?php
 
+
 //env variables
-$HOST=getenv('HOST');
-$DBNAME= getenv('DBNAME');
 $USERNAME= getenv('USERNAME');
 $PASSWORD= getenv('PASSWORD');
 
