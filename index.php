@@ -89,6 +89,11 @@
                     <td>HW 3</td>
                     <td><a target="_blank" href="/HW/hw3/index.html">/HW/hw3/index.html</a></td>
                 </tr>
+                
+                <tr>
+                    <td>HW 4</td>
+                    <td><a target="_blank" href="/HW/hw4/index.html">/HW/hw4/index.html</a></td>
+                </tr>
         </table>
         
         

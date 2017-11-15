@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>
+            Contact Form 
+        </title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+         <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+         
+             <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+        
+    </head>
+    <body class="container-fluid">
+        <h1 align="center" >
+            Contact Form 
+        </h1>
+        <div id="user_input" class="container-fluid">
+            <center>
+                 <form>
+                            Name: <input class="jelly" type="text" name="name" required minlength="1"><br>
+                            E-mail: <input class="jelly" type="text" name="email" required minlength="1"><br>
+                            
+                            <fieldset class="jelly">
+                            Gender:<br/>
+                                Male: <input class="jelly" type="radio" value="Male" name="gender" required><br />
+                                Female: <input class="jelly" type="radio" value="Female" name="gender"><br />
+                            </fieldset>
+                            
+                            Age: 
+                              <input class="jelly" type="number" min="12" max="120" step="1" id="n1" name="age"
+                              pattern="\d+" required> <br/>
+                                                                    
+                             What is your favorite snack?<br/>
+                             <select class="jelly" name="snacks" required>
+                                  <option value="">None</option>
+                                  <option value="fries">fries</option>
+                                  <option value="apple">apple</option>
+                                  <option value="cheetos">cheetos</option>
+                                  <option value="nuggets">nuggets</option>
+                            </select> 
+                            <br/>
+                            
+                             Other?<br/>
+                             <textarea name="message" rows="3" cols="30"></textarea> 
+                            
+                            <br/>
+        
+                   <input class="buttons" class="jelly" type="submit" id="submitBtn" value="Submit">
+                    
+                 <a href="index.html"> <input class="buttons" class="jelly" type="reset" id="resetBtn" value="Reset"></a>
+                </form>
+            </center>
+        </div>
+        
+    </body>
+</html>
+
+<script>
+    
+    document.getElementById('submitBtn').onclick= function() {
+ window.open("/HW/hw4/result.html"); 
+  
+};
+</script>
