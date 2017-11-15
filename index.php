@@ -58,6 +58,16 @@
                     <td> <a target="_blank" href="https://cst336-alerodriguez.herokuapp.com/Labs/lab4/index.html">https://cst336-alerodriguez.herokuapp.com/Labs/lab2/lab4/index.html</a></a></td>
             
             </tr>
+               <tr>
+                <td>Lab 5</td>
+                    <td> <a target="_blank" href="https://cst336-alerodriguez.herokuapp.com/Labs/lab5/index.php">https://cst336-alerodriguez.herokuapp.com/Labs/lab2/lab4/index.html</a></a></td>
+            
+            </tr>
+            
+               <tr>
+                <td>Lab 6</td>
+                    <td> <a target="_blank" href="https://cst336-alerodriguez.herokuapp.com/Labs/lab6/login.php">https://cst336-alerodriguez.herokuapp.com/Labs/lab2/lab4/index.html</a></a></td>
+             </tr>
             
         </table>
         <br>
