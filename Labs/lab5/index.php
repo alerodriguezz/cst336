@@ -15,7 +15,7 @@ $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 //write sql query and assign to variable 
-$sql = "SELECT * FROM device";
+$sql = "SELECT * FROM device" ;
 $result = $dbConn->query($sql);
 
 ?>

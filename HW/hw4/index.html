@@ -24,22 +24,22 @@
         </h1>
         <div id="user_input" class="container-fluid">
             <center>
-                 <form>
-                            Name: <input class="jelly" type="text" name="name" required minlength="1"><br>
-                            E-mail: <input class="jelly" type="text" name="email" required minlength="1"><br>
+                 <form action="javascript:doSomething()">
+                            Name: <input class="jelly" type="text" id="name" name="name" required minlength="1"><br>
+                            E-mail: <input class="jelly" type="text" id="email" name="email" required minlength="1"><br>
                             
                             <fieldset class="jelly">
                             Gender:<br/>
-                                Male: <input class="jelly" type="radio" value="Male" name="gender" required><br />
-                                Female: <input class="jelly" type="radio" value="Female" name="gender"><br />
+                                Male: <input class="jelly" type="radio" id="gender" value="Male" name="gender" required><br />
+                                Female: <input class="jelly" type="radio" id="gender" value="Female" name="gender"><br />
                             </fieldset>
                             
                             Age: 
-                              <input class="jelly" type="number" min="12" max="120" step="1" id="n1" name="age"
+                              <input class="jelly" type="number" id="age" min="12" max="120" step="1" id="n1" name="age"
                               pattern="\d+" required> <br/>
                                                                     
                              What is your favorite snack?<br/>
-                             <select class="jelly" name="snacks" required>
+                             <select class="jelly" name="snacks" id="snack" required>
                                   <option value="">None</option>
                                   <option value="fries">fries</option>
                                   <option value="apple">apple</option>
@@ -64,9 +64,13 @@
 </html>
 
 <script>
+//if all fields are filled out 
+
+function doSomething() {
     
-    document.getElementById('submitBtn').onclick= function() {
- window.open("/HW/hw4/result.html"); 
-  
-};
+  var userName = document.getElementById("name").value;
+  var userEmail = document.getElementById("email").value;
+window.location= "/HW/hw4/result.html?name="+userName+"&email="+userEmail;
+return false;
+}
 </script>
