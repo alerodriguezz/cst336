@@ -1,7 +1,7 @@
 <html>
   <head>
        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
-       <meta charset="utf-8">
+       <meta charset="utf-8"/>
        
                 <!-- Bootsrtrap Stuff-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -25,14 +25,9 @@
                       Password: <input type="password" class="jelly" name="pass" required minlength="1"><br>
                       Re-Enter Password: <input type="password" class="jelly" name="rePass" required minlength="1"><br>
                       Zipcode: <input id="geocomplete"type="text" class="jelly" name="zip"><br>  
-                      <p class="jelly">
-                        <div class="details" class="jelly">
-                                    Latitude:     <span data-geo="lat" /><br>
-                                    Longitude:    <span data-geo="lng" /><br>
-                                    Address:      <span data-geo="formatted_address" /><br>
-                                    Country Code: <span data-geo="country_short" /><br>
-                        </div>
-                      </p>
+                      City: <input id="locality"type="text" class="jelly" name="city"><br> 
+                      Longitude: <input id="longitude"type="text" class="jelly" name="latitude"><br>  
+                      Latitude: <input id="latitude"type="text" class="jelly" name="longitude"><br>  
                     
                       <input type="submit" class="jelly" name="submitBtn"value="Sign-Up">
             </form>
@@ -41,12 +36,50 @@
 </html>
 
 <script>
+
+var autocomplete;
+
+var componentForm = {
+    street_number: 'short_name',
+    route: 'long_name',
+    locality: 'long_name',
+    administrative_area_level_1: 'short_name',
+    country: 'long_name',
+    postal_code: 'short_name'
+};
+
+
   function zip_autocomplete(){
     
     var input= document.getElementById('geocomplete');
-    var autocomplete = new google.maps.places.Autocomplete(input);
-  }
+    autocomplete = new google.maps.places.Autocomplete(input);
+    
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        google.maps.event.addListener(autocomplete, 'place_changed', function(){
+          fillInAddress();
+          
+        });
 
+  }
+  
+  function fillInAddress(){
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+        
+    document.getElementById("latitude").value = place.geometry.location.lat();
+    document.getElementById("longitude").value = place.geometry.location.lng();
+        // Get each component of the address from the place details
+    // and fill the corresponding field on the form.
+    for (var i = 0; i < place.address_components.length; i++) {
+        var addressType = place.address_components[i].types[0];
+       console.log(place.address_components[i].types[0]);
+        if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
+        }
+    }
+  }
 </script>
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8yJ-h6PCeiIbnLgfwy4wT1i-csz1LsIg&libraries=places&callback=zip_autocomplete"></script>
