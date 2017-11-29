@@ -17,7 +17,7 @@
     <h1 align="center">
         Log-In Page
     </h1>
-    <body>
+    <body class="container-fluid">
         <div id="credentials" align="center">
             <form method="get">
                       Usernmame: <input type="text" class="jelly" name="userName" required minlength="1"><br>

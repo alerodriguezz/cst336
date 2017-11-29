@@ -1,0 +1,52 @@
+<html>
+  <head>
+       <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+       <meta charset="utf-8">
+       
+                <!-- Bootsrtrap Stuff-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+
+
+  </head>
+  <h1 align="center">
+        Sign-Up
+    </h1>
+    <body class="container-fluid">
+        <div id="credentials" align="center">
+            <form method="get">
+                      Username: <input type="text" class="jelly" name="userName" required minlength="1"><br>
+                      Password: <input type="password" class="jelly" name="pass" required minlength="1"><br>
+                      Re-Enter Password: <input type="password" class="jelly" name="rePass" required minlength="1"><br>
+                      Zipcode: <input id="geocomplete"type="text" class="jelly" name="zip"><br>  
+                      <p class="jelly">
+                        <div class="details" class="jelly">
+                                    Latitude:     <span data-geo="lat" /><br>
+                                    Longitude:    <span data-geo="lng" /><br>
+                                    Address:      <span data-geo="formatted_address" /><br>
+                                    Country Code: <span data-geo="country_short" /><br>
+                        </div>
+                      </p>
+                    
+                      <input type="submit" class="jelly" name="submitBtn"value="Sign-Up">
+            </form>
+        </div>
+    </body>
+</html>
+
+<script>
+  function zip_autocomplete(){
+    
+    var input= document.getElementById('geocomplete');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+  }
+
+</script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8yJ-h6PCeiIbnLgfwy4wT1i-csz1LsIg&libraries=places&callback=zip_autocomplete"></script>
