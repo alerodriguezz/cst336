@@ -105,7 +105,7 @@
                 </tr>
                   <tr>
                     <td>HW 5</td>
-                    <td><a target="_blank" href="/HW/hw5/index.html">/HW/hw5/index.html</a></td>
+                    <td><a target="_blank" href="/HW/hw5/index.php">/HW/hw5/index.php</a></td>
                 </tr>
         </table>
         

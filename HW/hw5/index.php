@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['history'])) {  //creates the session array if it doesn't exist yet
+     $_SESSION['history'] = array();	
+} 
+
+?>
 <html>
   <head>
        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
@@ -86,34 +94,15 @@ function initMap() {
               (place.address_components[2] && place.address_components[2].short_name || '')
             ].join(' ');
           }
-
+          
+       
           infowindowContent.children['place-icon'].src = place.icon;
           infowindowContent.children['place-name'].textContent = place.name;
           infowindowContent.children['place-address'].textContent = address;
           infowindow.open(map, marker);
         });
 
-        // Sets a listener on a radio button to change the filter type on Places
-        // Autocomplete.
-        function setupClickListener(id, types) {
-          var radioButton = document.getElementById(id);
-          radioButton.addEventListener('click', function() {
-            autocomplete.setTypes(types);
-          });
-        }
-
-        setupClickListener('changetype-all', []);
-        setupClickListener('changetype-address', ['address']);
-        setupClickListener('changetype-establishment', ['establishment']);
-        setupClickListener('changetype-geocode', ['geocode']);
-
-        document.getElementById('use-strict-bounds')
-            .addEventListener('click', function() {
-              console.log('Checkbox clicked! New state=' + this.checked);
-              autocomplete.setOptions({strictBounds: this.checked});
-            });
-      }
-
+}
                     
 </script>
 
