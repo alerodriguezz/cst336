@@ -26,11 +26,18 @@ if (!isset($_SESSION['history'])) {  //creates the session array if it doesn't e
     <center>
     <h1>Simple Map Search</h1><br>
         <fieldset>
-             <form>
-             Enter a Location: <input type="text" id="geocomplete">
+             <form method="post">
+             Enter a Location: <input type="text" id="geocomplete" name="geocomplete">
         
         </form>
         </fieldset>
+       
+    <?php   if (!in_array($_POST['geocomplete'], $_SESSION['history'])) { //checks whether item is in array
+   $_SESSION['history'][] = $_POST['geocomplete'];
+   echo "You searched ". $_POST['geocomplete'];
+}
+
+?>
        
         <div id="map" class="jelly"></div>
         <div id="infowindow-content">
@@ -41,8 +48,12 @@ if (!isset($_SESSION['history'])) {  //creates the session array if it doesn't e
 
      <script>
      
+     //boolean value to check if input was valid 
+     var valid=false;
+     
      //initlializes map
 function initMap() {
+        var address;
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -33.8688, lng: 151.2195},
           zoom: 13
@@ -88,6 +99,7 @@ function initMap() {
 
           var address = '';
           if (place.address_components) {
+            valid=true;
             address = [
               (place.address_components[0] && place.address_components[0].short_name || ''),
               (place.address_components[1] && place.address_components[1].short_name || ''),
@@ -95,16 +107,24 @@ function initMap() {
             ].join(' ');
           }
           
-       
+       //place info in anchor pop-up
           infowindowContent.children['place-icon'].src = place.icon;
           infowindowContent.children['place-name'].textContent = place.name;
           infowindowContent.children['place-address'].textContent = address;
           infowindow.open(map, marker);
         });
+        
 
 }
-                    
+/*
+if (valid==true)
+{
+  
+    
+}
+  */          
 </script>
+
 
    
     </center>
