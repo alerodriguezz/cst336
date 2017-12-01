@@ -26,18 +26,13 @@ if (!isset($_SESSION['history'])) {  //creates the session array if it doesn't e
     <center>
     <h1>Simple Map Search</h1><br>
         <fieldset>
-             <form method="post">
+             <form method="post" onsubmit="return initMap();">
              Enter a Location: <input type="text" id="geocomplete" name="geocomplete">
-        
+              <input type="submit" value="search">
         </form>
         </fieldset>
-       
-    <?php   if (!in_array($_POST['geocomplete'], $_SESSION['history'])) { //checks whether item is in array
-   $_SESSION['history'][] = $_POST['geocomplete'];
-   echo "You searched ". $_POST['geocomplete'];
-}
-
-?>
+        
+        <p id="notification"></p>
        
         <div id="map" class="jelly"></div>
         <div id="infowindow-content">
@@ -47,9 +42,6 @@ if (!isset($_SESSION['history'])) {  //creates the session array if it doesn't e
         </div>
 
      <script>
-     
-     //boolean value to check if input was valid 
-     var valid=false;
      
      //initlializes map
 function initMap() {
@@ -105,6 +97,8 @@ function initMap() {
               (place.address_components[1] && place.address_components[1].short_name || ''),
               (place.address_components[2] && place.address_components[2].short_name || '')
             ].join(' ');
+            
+            document.getElementById("notification").innerHTML="You searched "+ address;
           }
           
        //place info in anchor pop-up
@@ -112,17 +106,12 @@ function initMap() {
           infowindowContent.children['place-name'].textContent = place.name;
           infowindowContent.children['place-address'].textContent = address;
           infowindow.open(map, marker);
+          
+           
         });
-        
-
+        return false;
 }
-/*
-if (valid==true)
-{
   
-    
-}
-  */          
 </script>
 
 
