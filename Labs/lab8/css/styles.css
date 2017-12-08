@@ -52,3 +52,26 @@ li a:hover {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+table{
+      width: 60%;
+}
+
+table td {
+        border-collapse:separate;
+    border:solid black 2px;
+    border-radius:6px;
+    -moz-border-radius:6px;
+}
+
+table .button{
+    float: right;
+width: 25%;
+overflow: auto;
+min-height: 6px;
+height: 20px;
+font-size: 10px;
+text-align: center;
+padding: 1px;
+
+}

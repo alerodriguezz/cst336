@@ -14,8 +14,8 @@
     <body>
         <!--Navigation Bar Code-->
         <ul>
-          <li><a class="active" href="#home">Home</a></li>
-          <li><a href="#news">Adoptions</a></li>
+          <li><a class="active" href="index.php">Home</a></li>
+          <li><a href="adoptions.php">Adoptions</a></li>
           <li><a href="#contact">About Us</a></li>
         </ul>
         
