@@ -41,23 +41,45 @@ $result = $dbConn->query($sql);
         <h1>CSUMB Animal Shelter</h1>
         The official adoption website of CSUMB
         
+        <!--table-->
         <div>
-            <table border="1" cellspacing="0" cellpadding="2" >
+            <table border="1" cellspacing="5" cellpadding="2" >
                <?php
                 for($i=0; $row = $result->fetch(); $i++){
                 ?>
-                	<tr class="device">
-                		<td><?php echo "Name: ".$row['name'];?><br>
+                	<tr cellpadding="10">
+                		<td class="animal"><?php echo "Name: ".$row['name'];?><br>
                 		    <?php  echo "Type: ". $row['type']; ?>
-                		    <button class="button"> Adopt Me!</button>
+                		    <button type="button" class="btn btn-primary btn-lg" class="button" id="<?php echo $row['name'] ?>" data-toggle="modal" data-target="#myModal"> Adopt Me!</button>
+                		    	 <?php }?>
                 		      </td>
-                		      
-                		 <?php }?>
                 	</tr>
-
                 </table>
         </div>
         </center>
         
+        <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Adopt</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
     </body>
 </html>
+
+<script>
+
+</script>

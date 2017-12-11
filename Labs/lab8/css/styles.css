@@ -55,6 +55,7 @@ li a:hover {
 
 table{
       width: 60%;
+       
 }
 
 table td {
@@ -70,8 +71,19 @@ width: 25%;
 overflow: auto;
 min-height: 6px;
 height: 20px;
-font-size: 10px;
+font-size: 16px;
 text-align: center;
 padding: 1px;
+margin-bottom: 10px;
 
 }
+
+.btn {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    float: right;
+    margin: 10px;
+    margin-bottom: 10px;
+}
+
