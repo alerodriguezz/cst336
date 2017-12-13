@@ -74,7 +74,7 @@ $result = $dbConn->query($sql);
                   </div>
                   <div class="modal-body" style="float: left">
                       <img src="" class="showPic" >
-                          <div id="popupLayout" style="float: left">
+                          <div id="popupLayout" style="float: left"><br>
                               <p id="age"></p><br>
                               <p id="breed"></p><br>
                               <p id="description"></p><br>

@@ -73,6 +73,11 @@
                 <td>Lab 7</td>
                     <td> <a target="_blank" href="https://cst336-alerodriguez.herokuapp.com/Labs/lab7/index.html">https://cst336-alerodriguez.herokuapp.com/Labs/lab7/index.html</a></a></td>
              </tr>
+             
+                <tr>
+                <td>Lab 8</td>
+                    <td> <a target="_blank" href="https://cst336-alerodriguez.herokuapp.com/Labs/lab8/index.php">https://cst336-alerodriguez.herokuapp.com/Labs/lab8/index.php</a></a></td>
+             </tr>
 
             
         </table>
