@@ -48,7 +48,7 @@ $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
     </body>
 </html>
-<?
+<?php
 //if submit button is clicked 
 if (isset($_POST['loginBtn'])) {
     
@@ -62,19 +62,17 @@ if (isset($_POST['loginBtn'])) {
                     //execute 
                     $result= $search_stmt->execute();
                     
-                    $num = mysql_num_rows ( $result ); 
-                    
-                        if ( $num == 0 ) {
+                     if(!empty($result) || $result->rowCount() > 0) {
+                             ?> <script> console.log("user exists");</script><?php
+                                          $add_stmt=null;
+                                sleep(1);
+                                header ( "location: home.php" );
+                            }
+                             else {
                               ?> <script> alert("user does not exist.");</script><?php
                         }
-                        else {
-                             ?> <script> console.log("user exists");</script><?php
-                               // $_SESSION['user'] = $user;
-                                header ( "Location: landing_page.php" );
-                            }
-                    $add_stmt=null;
-                    sleep(1);
-                    header('location:login.php');
+          
+                    
 }
 ?>
 

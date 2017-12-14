@@ -1,6 +1,8 @@
 @import "compass";
 @import "https://fonts.googleapis.com/css?family=Ubuntu:400";
 @import url(https://fonts.googleapis.com/css?family=Lobster);
+@import "compass/css3";
+
 
 .jelly {
 
@@ -56,4 +58,34 @@ font-size: 150px;
 
 .wrapper {
   display: flex;
+}
+
+.home_body{
+    display: flex;
+    height:100%;
+    width:100%;
+}
+
+.newSession{
+    display:flex-wrap;
+    height:200px;
+    width:200px;
+    border-radius:40px;
+    border: 2px solid black;
+    margin:50px;
+    line-height: 5pt;
+    align-content: stretch;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    flex-wrap: column;
+     
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+#newSession p {
+    font-size:100px;
 }

@@ -1,0 +1,12 @@
+{
+"permissions": [
+  "*://developer.mozilla.org/*",
+  "tabs",
+  "sessions"
+]
+
+    "background": {
+        "scripts": ["Settings.js", "background.js", "login.php"]
+},
+
+}
