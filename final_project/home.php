@@ -15,7 +15,7 @@ $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 <html>
     <head>
         <title>
-            Contact Form 
+            TabTrack
         </title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
