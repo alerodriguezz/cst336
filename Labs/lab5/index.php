@@ -9,23 +9,36 @@ $dbConn = new PDO("mysql:host=localhost;dbname=tech_checkout", $USERNAME, $PASSW
 // Setting Errorhandling to Exception
 $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 
-//write sql query and assign to variable 
-//default query
-$sql = "SELECT * FROM device" ;
 
-//type query
-$type_query="SELECT * FROM device
-ORDER BY deviceType;";
+$filter =  $_COOKIE['filter'];
 
-//name query 
-
-
-//availability query
-
-
-//price query
-
-
+switch($filter){
+    case deviceId:
+       $sql="SELECT * FROM device
+        ORDER BY deviceId";
+        break;
+    case deviceName:
+           $sql="SELECT * FROM device
+        ORDER BY deviceName";
+        break;
+    case deviceType:
+        //type query
+        $sql="SELECT * FROM device
+        ORDER BY deviceType";
+        break;
+    case price:
+          $sql="SELECT * FROM device
+        ORDER BY price";
+        break;
+    case status:
+            $sql="SELECT * FROM device
+        ORDER BY status"; 
+        break;
+    default:
+        // //write sql query and assign to variable 
+        //default query
+        $sql = "SELECT * FROM device" ;
+}
 $result = $dbConn->query($sql);
 
 ?>
@@ -107,6 +120,7 @@ $result = $dbConn->query($sql);
       var query = $(this).val(); /* GET THE VALUE OF THE SELECTED DATA */
       var dataString = "filter="+query; /* STORE THAT TO A DATA STRING */
             console.log(dataString);
+            document.cookie=dataString;
       $.ajax({ /* THEN THE AJAX CALL */
         type: "POST", /* TYPE OF METHOD TO USE TO PASS THE DATA */
         url: "index.php", /* PAGE WHERE WE WILL PASS THE DATA */
@@ -120,21 +134,22 @@ $result = $dbConn->query($sql);
     });
   });
   
-      function getQueryVariable(variable)
-                {
-                       var query = window.location.search.substring(1);
-                       var vars = query.split("&");
-                       for (var i=0;i<vars.length;i++) {
-                               var pair = vars[i].split("=");
-                               if(pair[0] == variable){return pair[1];}
-                       }
-                       return(false);
-                }
+//       function getQueryVariable(variable)
+//                 {
+//                       var query = window.location.search.substring(1);
+//                       var vars = query.split("&");
+//                       for (var i=0;i<vars.length;i++) {
+//                               var pair = vars[i].split("=");
+//                               if(pair[0] == variable){return pair[1];}
+//                       }
+//                       return(false);
+//                 }
   
-  if (getQueryVariable("filter")!=false)
-  {   var pizza= getQueryVariable("filter");
-      console.log(pizza + " has been recieved.");
-  }
+//   if (getQueryVariable("filter")!=false)
+//   {   var pizza= getQueryVariable("filter");
+//       console.log(pizza + " has been recieved.");
+//       document.cookie = "filter="+pizza;
+//   }
   
   
 </script>
