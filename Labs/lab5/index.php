@@ -1,4 +1,5 @@
 <?php
+//disclaimer.........only works on c9....because of the env variables
 //env variables
 $USERNAME= getenv('USERNAME');
 $PASSWORD= getenv('PASSWORD');
@@ -105,11 +106,6 @@ $result = $dbConn->query($sql);
                 </table>
             </div>
 </body>
-
-<div id="show">
-  <!-- ITEMS TO BE DISPLAYED HERE -->
-</div>
-
 </html>
 
 <script>
@@ -132,7 +128,7 @@ $result = $dbConn->query($sql);
       });
 
     });
-  });
+  });    
   
 //       function getQueryVariable(variable)
 //                 {
