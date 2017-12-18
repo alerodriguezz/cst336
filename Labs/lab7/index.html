@@ -13,6 +13,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
 
+<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
 
   </head>
   <h1 align="center">
@@ -21,22 +22,26 @@
     <body class="container-fluid">
         <div id="credentials" align="center">
             <form method="get">
-                      Username: <input type="text" class="jelly" name="userName" required minlength="1"><br>
-                      Password: <input type="password" class="jelly" name="pass" required minlength="1"><br>
-                      Re-Enter Password: <input type="password" class="jelly" name="rePass" required minlength="1"><br>
-                      Zipcode: <input id="geocomplete"type="text" class="jelly" name="zip"><br>  
-                      City: <input id="locality"type="text" class="jelly" name="city"><br> 
-                      Longitude: <input id="longitude"type="text" class="jelly" name="latitude"><br>  
-                      Latitude: <input id="latitude"type="text" class="jelly" name="longitude"><br>  
+                      Username: <input type="text" class="jelly" name="userName" id="userName" required minlength="1">
+                        <span style="color:red" id="usernameValidation"></span>  <br />
+                      Password: <input type="password" id="pass" class="jelly" name="pass" required minlength="4"><br>
+                      Re-Enter Password: <input id="rePass" type="password" class="jelly" name="rePass" required minlength="4"><br>
+                      Email:  <input type="email" class="jelly" name="email" required minlength="1"><br>
+                      Phone (in the form xxx-xxx-xxxx):  <input type="tel" class="jelly" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required minlength="1"><br>
+                      State: <input class="jelly" type="text" id="state" onchange="getCountyList();" required><br />  
+                      County: <select id="county" class="jelly"></select><br>
+                      Zipcode: <input id="geocomplete"type="text" class="jelly" name="zip" required><br>  
+                      City: <input id="locality"type="text" class="jelly" name="city" required><br> 
+                      Longitude: <input id="longitude"type="text" class="jelly" name="latitude" required><br>  
+                      Latitude: <input id="latitude"type="text" class="jelly" name="longitude" required><br>  
                     
-                      <input type="submit" class="jelly" name="submitBtn"value="Sign-Up">
+                      <input type="submit" class="jelly"  onclick="checkForm();" name="submitBtn"value="Sign-Up">
             </form>
         </div>
     </body>
 </html>
 
 <script>
-
 var autocomplete;
 
 var componentForm = {
@@ -48,8 +53,83 @@ var componentForm = {
     postal_code: 'short_name'
 };
 
+ $("#userName").change( function(){
+     //alert($(this).val()); //showing the username entered, for testing purposes
+ $.ajax({
+            type: "get",
+            url: "usernameLookup.php",
+            data: { "username": $(this).val()},
+            success: function(data,status) {
+                 //alert(data); //displaying data received, for testing purposes
+                 
+                if (data == "Available") {
+                     $("#usernameValidation").html("Available!"); 
+                     $("#usernameValidation").css("color","green");
+                 }
+                else {
+                        $("#usernameValidation").html("Username already taken!");         
+                        $("#usernameValidation").css("color","red");
+                 }           
 
-  function zip_autocomplete(){
+            }
+        });
+});
+
+function checkForm(){
+    //checj if they match 
+    var pass =document.getElementById("pass").value;
+     var rePass =document.getElementById("rePass").value;
+
+
+     if(pass!=rePass){
+         alert("Both passwords must match. Please try again.");
+     }
+     
+     else {
+         //check for digit or uppercase
+          for (var i = 0; i<pass.length; i++){
+             var number= /^[0-9]+$/;
+             var upperCase = /^[A-Z]+$/;
+                if (pass.value.match(number)&& pass.value.match(upperCase))
+                {
+                    alert=("success, password is valid");
+                }
+            }
+     }
+}
+
+function getCountyList() { 
+      var stateSelected = document.getElementById("state").value; 
+   var url = "counties.php?state="; 
+  
+   var ajax;
+    if (window.XMLHttpRequest) {
+         ajax= new XMLHttpRequest();
+     }
+ 
+   ajax.open("GET", url + stateSelected, true);
+   ajax.send();
+                
+  ajax.onreadystatechange=function() {
+                      if (ajax.readyState==4 && ajax.status==200) {
+                            //alert(ajax.responseText);  //displays value retrieved from PHP program
+            
+            var data = JSON.parse(ajax.responseText);
+            var countySelected = document.getElementById("county");
+            countySelected.innerHTML="<option> Select One </option>";
+                           
+            for (var i=0; i< data['counties'].length; i++) {
+                countySelected.innerHTML += "<option>" + data["counties"][i].county + "</option>";
+                 }//endFor
+ 
+           }//endIf 
+
+
+
+}
+
+}
+function zip_autocomplete(){
     
     var input= document.getElementById('geocomplete');
     autocomplete = new google.maps.places.Autocomplete(input);
@@ -81,5 +161,7 @@ var componentForm = {
     }
   }
 </script>
+
+
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8yJ-h6PCeiIbnLgfwy4wT1i-csz1LsIg&libraries=places&callback=zip_autocomplete"></script>
