@@ -96,7 +96,7 @@
             </tr>
                 <tr>
                     <td>HW 2</td>
-                    <td><a target="_blank" href="/HW/hw2/index.html">/HW/hw2/index.html</a></td>
+                    <td><a target="_blank" href="/HW/hw2/index.php">/HW/hw2/index.php</a></td>
                 </tr>
                 
                 <tr>
